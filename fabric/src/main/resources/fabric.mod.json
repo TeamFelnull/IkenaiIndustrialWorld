@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "epochnaruworld",
+  "id": "ikenaiindustrialworld",
   "version": "${version}",
-  "name": "Epoch Naru World",
+  "name": "Ikenai Industrial World",
   "description": "Thank you for downloading!\\nA Ikisugi MOD",
   "authors": [
     "MORIMORI0317",
@@ -17,13 +17,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "red.felnull.epochnaruworld.EpochNaruWorldFabric"
+      "red.felnull.iiw.IkenaiIndustrialWorldFabric"
     ],
     "client": [
-      "red.felnull.epochnaruworld.client.EpochNaruWorldClientFabric"
+      "red.felnull.iiw.client.IkenaiIndustrialWorldClientFabric"
     ],
     "otyacraftengine": [
-      "red.felnull.epochnaruworld.integration.EpochNaruWorldOEIntegration"
+      "red.felnull.iiw.integration.IkenaiIndustrialWorldOEIntegration"
     ]
   },
   "depends": {
@@ -33,8 +33,8 @@
     "architectury": ">=2.0.111",
     "otyacraftengine": ">=2.0"
   },
-  "accessWidener": "epochnaruworld.accesswidener",
+  "accessWidener": "ikenaiindustrialworld.accesswidener",
   "mixins": [
-    "epochnaruworld.mixins.json"
+    "ikenaiindustrialworld.mixins.json"
   ]
 }

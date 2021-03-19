@@ -1,21 +1,18 @@
-package red.felnull.epochnaruworld.integration;
+package red.felnull.iiw.integration;
 
-import red.felnull.epochnaruworld.EpochNaruWorld;
-import red.felnull.epochnaruworld.biome.ENWBiomes;
+import red.felnull.iiw.IkenaiIndustrialWorld;
 import red.felnull.otyacraftengine.api.IOEIntegration;
-import red.felnull.otyacraftengine.api.OEIntegration;
 import red.felnull.otyacraftengine.api.helper.BiomeRegisterHelper;
 import red.felnull.otyacraftengine.api.register.OEModelLoaderPathRegister;
 
-@OEIntegration
-public class EpochNaruWorldOEIntegration implements IOEIntegration {
+public class IkenaiIndustrialWorldOEIntegration implements IOEIntegration {
     @Override
     public void biomeRegisterHelper(BiomeRegisterHelper reg) {
-        ENWBiomes.init(reg);
+
     }
 
     @Override
     public void registrationModelLoaderPath(OEModelLoaderPathRegister reg) {
-        reg.register(EpochNaruWorld.MODID);
+        reg.register(IkenaiIndustrialWorld.MODID);
     }
 }
