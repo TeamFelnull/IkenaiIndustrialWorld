@@ -1,0 +1,19 @@
+{
+    "variants": {
+        "facing=east": {
+            "model": "epochnaruworld:block/tank/basic_tank",
+            "y": 90
+        },
+        "facing=north": {
+            "model": "epochnaruworld:block/tank/basic_tank"
+        },
+        "facing=south": {
+            "model": "epochnaruworld:block/tank/basic_tank",
+            "y": 180
+        },
+        "facing=west": {
+            "model": "epochnaruworld:block/tank/basic_tank",
+            "y": 270
+        }
+    }
+}

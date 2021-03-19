@@ -1,0 +1,15 @@
+{
+  "_comment.i": "Item",
+  "item.epochnaruworld.test_item": "Test Item",
+  "_comment.b": "Block",
+  "block.epochnaruworld.test_block": "Test Block",
+  "block.epochnaruworld.poor_tank": "Poor Tank",
+  "block.epochnaruworld.simple_tank": "Simple Tank",
+  "block.epochnaruworld.basic_tank": "Basic Tank",
+  "_comment.f": "Fluid",
+  "block.epochnaruworld.steam": "Steam",
+  "block.epochnaruworld.oil": "Oil",
+  "_comment.c": "CreativeTab",
+  "itemGroup.epochnaruworld.epochnaruworld": "Epoch Naru World",
+  "_comment.la": "Last"
+}

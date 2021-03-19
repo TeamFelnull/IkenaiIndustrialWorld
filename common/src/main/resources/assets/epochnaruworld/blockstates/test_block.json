@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "epochnaruworld:block/test_block" }
+    }
+}

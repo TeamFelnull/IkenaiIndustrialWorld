@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "epochnaruworld",
+  "version": "${version}",
+  "name": "Epoch Naru World",
+  "description": "Thank you for downloading!\\nA Ikisugi MOD",
+  "authors": [
+    "MORIMORI0317",
+    "TeamFelNull"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "LGPL v3",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "red.felnull.epochnaruworld.EpochNaruWorldFabric"
+    ],
+    "client": [
+      "red.felnull.epochnaruworld.client.EpochNaruWorldClientFabric"
+    ],
+    "otyacraftengine": [
+      "red.felnull.epochnaruworld.integration.EpochNaruWorldOEIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.11.1",
+    "fabric": "*",
+    "minecraft": ">=1.17-",
+    "architectury": ">=2.0.111",
+    "otyacraftengine": ">=2.0"
+  },
+  "accessWidener": "epochnaruworld.accesswidener",
+  "mixins": [
+    "epochnaruworld.mixins.json"
+  ]
+}

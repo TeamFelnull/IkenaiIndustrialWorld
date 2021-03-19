@@ -1,0 +1,15 @@
+{
+  "_comment.i": "Item",
+  "item.epochnaruworld.test_item": "テストアイテム",
+  "_comment.b": "Block",
+  "block.epochnaruworld.test_block": "テストブロック",
+  "block.epochnaruworld.poor_tank": "粗末なタンク",
+  "block.epochnaruworld.simple_tank": "簡素なタンク",
+  "block.epochnaruworld.basic_tank": "基本的なタンク",
+  "_comment.f": "Fluid",
+  "block.epochnaruworld.steam": "水蒸気",
+  "block.epochnaruworld.oil": "石油",
+  "_comment.c": "CreativeTab",
+  "itemGroup.epochnaruworld.epochnaruworld": "Epoch Naru World",
+  "_comment.la": "Last"
+}

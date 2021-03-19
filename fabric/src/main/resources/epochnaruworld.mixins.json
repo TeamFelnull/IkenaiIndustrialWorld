@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "red.felnull.epochnaruworld.mixin.fabric",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "EpochNaruWorld-fabric-refmap.json"
+}
