@@ -1,7 +1,0 @@
-{
-    "parent": "block/dragon_egg",
-    "textures": {
-        "particle": "epochnaruworld:block/big_egg",
-        "all": "epochnaruworld:block/big_egg"
-    }
-}

@@ -1,15 +1,15 @@
 {
   "_comment.i": "Item",
-  "item.epochnaruworld.test_item": "Test Item",
+  "item.ikenaiindustrialworld.test_item": "Test Item",
   "_comment.b": "Block",
-  "block.epochnaruworld.test_block": "Test Block",
-  "block.epochnaruworld.poor_tank": "Poor Tank",
-  "block.epochnaruworld.simple_tank": "Simple Tank",
-  "block.epochnaruworld.basic_tank": "Basic Tank",
+  "block.ikenaiindustrialworld.test_block": "Test Block",
+  "block.ikenaiindustrialworld.poor_tank": "Poor Tank",
+  "block.ikenaiindustrialworld.simple_tank": "Simple Tank",
+  "block.ikenaiindustrialworld.basic_tank": "Basic Tank",
   "_comment.f": "Fluid",
-  "block.epochnaruworld.steam": "Steam",
-  "block.epochnaruworld.oil": "Oil",
+  "block.ikenaiindustrialworld.steam": "Steam",
+  "block.ikenaiindustrialworld.oil": "Oil",
   "_comment.c": "CreativeTab",
-  "itemGroup.epochnaruworld.epochnaruworld": "Epoch Naru World",
+  "itemGroup.ikenaiindustrialworld.ikenaiindustrialworld": "Ikenai Industrial World",
   "_comment.la": "Last"
 }

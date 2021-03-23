@@ -1,18 +1,18 @@
 {
     "variants": {
         "facing=east": {
-            "model": "epochnaruworld:block/tank/poor_tank",
+            "model": "ikenaiindustrialworld:block/tank/poor_tank",
             "y": 90
         },
         "facing=north": {
-            "model": "epochnaruworld:block/tank/poor_tank"
+            "model": "ikenaiindustrialworld:block/tank/poor_tank"
         },
         "facing=south": {
-            "model": "epochnaruworld:block/tank/poor_tank",
+            "model": "ikenaiindustrialworld:block/tank/poor_tank",
             "y": 180
         },
         "facing=west": {
-            "model": "epochnaruworld:block/tank/poor_tank",
+            "model": "ikenaiindustrialworld:block/tank/poor_tank",
             "y": 270
         }
     }

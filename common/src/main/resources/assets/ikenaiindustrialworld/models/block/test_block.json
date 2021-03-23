@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "epochnaruworld:block/test_block"
+        "all": "ikenaiindustrialworld:block/test_block"
     }
 }

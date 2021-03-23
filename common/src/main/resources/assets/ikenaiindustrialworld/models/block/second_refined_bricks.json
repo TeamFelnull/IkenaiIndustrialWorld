@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "epochnaruworld:block/second_refined_bricks"
+        "all": "ikenaiindustrialworld:block/second_refined_bricks"
     }
 }

@@ -1,5 +1,5 @@
 {
-	"parent": "epochnaruworld:block/tank/tank_base",
+	"parent": "ikenaiindustrialworld:block/tank/tank_base",
 	"textures": {
 		"0": "block/cobblestone",
 		"1": "block/glass",

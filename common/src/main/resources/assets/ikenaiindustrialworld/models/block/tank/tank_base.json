@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/cube_all",
 	"textures": {
-		"0": "epochnaruworld:block/cobblestone",
-		"1": "epochnaruworld:block/glass",
-		"particle": "epochnaruworld:block/cobblestone"
+		"0": "ikenaiindustrialworld:block/cobblestone",
+		"1": "ikenaiindustrialworld:block/glass",
+		"particle": "ikenaiindustrialworld:block/cobblestone"
 	},
 	"elements": [
 		{

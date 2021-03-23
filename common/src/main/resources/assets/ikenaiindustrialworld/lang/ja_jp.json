@@ -1,15 +1,15 @@
 {
   "_comment.i": "Item",
-  "item.epochnaruworld.test_item": "テストアイテム",
+  "item.ikenaiindustrialworld.test_item": "テストアイテム",
   "_comment.b": "Block",
-  "block.epochnaruworld.test_block": "テストブロック",
-  "block.epochnaruworld.poor_tank": "粗末なタンク",
-  "block.epochnaruworld.simple_tank": "簡素なタンク",
-  "block.epochnaruworld.basic_tank": "基本的なタンク",
+  "block.ikenaiindustrialworld.test_block": "テストブロック",
+  "block.ikenaiindustrialworld.poor_tank": "粗末なタンク",
+  "block.ikenaiindustrialworld.simple_tank": "簡素なタンク",
+  "block.ikenaiindustrialworld.basic_tank": "基本的なタンク",
   "_comment.f": "Fluid",
-  "block.epochnaruworld.steam": "水蒸気",
-  "block.epochnaruworld.oil": "石油",
+  "block.ikenaiindustrialworld.steam": "水蒸気",
+  "block.ikenaiindustrialworld.oil": "石油",
   "_comment.c": "CreativeTab",
-  "itemGroup.epochnaruworld.epochnaruworld": "Epoch Naru World",
+  "itemGroup.ikenaiindustrialworld.ikenaiindustrialworld": "Ikenai Industrial World",
   "_comment.la": "Last"
 }
