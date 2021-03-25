@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import red.felnull.iiw.IkenaiIndustrialWorld;
 import red.felnull.iiw.item.IIWCreativeModeTab;
+import red.felnull.iiw.item.TankBlockItem;
 
 import java.util.function.Function;
 
@@ -19,6 +20,13 @@ public class IIWBlocks {
 
     public static final Block SECOND_REFINED_BRICS = register("second_refined_bricks", Material.STONE, 2f, 6f);
 
+    public static final Block POOR_TANK = registerTank("poor_tank", 0, Material.STONE);
+    public static final Block SIMPLE_TANK = registerTank("simple_tank", 1, Material.STONE);
+    public static final Block BASIC_TANK = registerTank("basic_tank", 2, Material.METAL);
+
+    public static Block registerTank(String name, int tier, Material material) {
+        return register(name, new TankBlock(tier, BlockBehaviour.Properties.of(material).strength(1f, 1f).noOcclusion()), n -> new TankBlockItem(n, tier, new Item.Properties().tab(IIWCreativeModeTab.MOD_TAB)));
+    }
 
     private static Block register(String name, Material materialIn, float hardness, float resistance) {
         return register(name, new Block(BlockBehaviour.Properties.of(materialIn).strength(hardness, resistance)));
