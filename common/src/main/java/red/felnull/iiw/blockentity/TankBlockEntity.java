@@ -2,36 +2,32 @@ package red.felnull.iiw.blockentity;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.block.state.BlockState;
 import red.felnull.iiw.block.TankBlock;
-import red.felnull.otyacraftengine.blockentity.IIkisugibleFluidTankBlockEntity;
 import red.felnull.otyacraftengine.fluid.IkisugiFluidTank;
 
 import java.util.Optional;
 
-public class TankBlockEntity extends IIWBaseContainerBlockEntity implements IIkisugibleFluidTankBlockEntity {
-    private IkisugiFluidTank tank;
-    private final int tierLevel;
+public class TankBlockEntity extends IIWBaseContainerBlockEntity {
+    private final TankBlock tankBlock;
 
     public TankBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(IIWBlockEntitys.TANK, blockPos, blockState);
-        this.tierLevel = ((TankBlock) blockState.getBlock()).getTierLevel();
-        tank = new IkisugiFluidTank(TankBlock.getTankCapacity(tierLevel));
+        this.tankBlock = (TankBlock) blockState.getBlock();
+        setFluidTankCapacity(0, TankBlock.getTankCapacity(getTierLevel()));
     }
 
-    @Override
-    public CompoundTag save(CompoundTag compoundTag) {
-        tank.save(compoundTag);
-        return super.save(compoundTag);
+    public int getTierLevel() {
+        return tankBlock.getTierLevel();
     }
 
     @Override
     protected Component getDefaultName() {
-        return null;
+        return new TranslatableComponent(tankBlock.getDescriptionId());
     }
 
     @Override
@@ -40,36 +36,12 @@ public class TankBlockEntity extends IIWBaseContainerBlockEntity implements IIki
     }
 
     @Override
-    public void load(CompoundTag compoundTag) {
-        tank.load(compoundTag);
-        super.load(compoundTag);
+    public int getFluidTankSize() {
+        return 1;
     }
 
     @Override
-    public Optional<IkisugiFluidTank> getFluidTank(Direction direction) {
-        return Optional.of(tank);
-    }
-
-    public IkisugiFluidTank getTank() {
-        return tank;
-    }
-
-    public int getTierLevel() {
-        return tierLevel;
-    }
-
-    @Override
-    public void tick() {
-        syncble();
-    }
-
-    @Override
-    public boolean tickble() {
-        return true;
-    }
-
-    @Override
-    public int getContainerSize() {
-        return 0;
+    public Optional<IkisugiFluidTank> getFluidTank(Direction side) {
+        return Optional.of(getFluidTank(0));
     }
 }

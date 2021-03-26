@@ -18,9 +18,9 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
-import red.felnull.otyacraftengine.block.IkisugiBaseEntityBlock;
+import red.felnull.otyacraftengine.block.IkisugiBaseContainerEntityBlock;
 
-public abstract class IIWBaseEntityBlock extends IkisugiBaseEntityBlock {
+public abstract class IIWBaseEntityBlock extends IkisugiBaseContainerEntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
@@ -73,4 +73,6 @@ public abstract class IIWBaseEntityBlock extends IkisugiBaseEntityBlock {
     public boolean isTransparentRenderLayer() {
         return true;
     }
+
+
 }

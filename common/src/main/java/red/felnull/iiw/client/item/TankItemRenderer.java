@@ -26,11 +26,9 @@ public class TankItemRenderer implements ICustomBEWLRenderer {
             BakedModel model = IKSGRenderUtil.getBakedModel(new ResourceLocation(((TankBlockItem) item).getRegistryName().getNamespace(), "block/tank/" + ((TankBlockItem) item).getRegistryName().getPath()));
             VertexConsumer ivb = multiBufferSource.getBuffer(Sheets.cutoutBlockSheet());
             IKSGRenderUtil.renderBakedModel(poseStack, ivb, null, model, combinedLight, combinedOverlay);
-            Optional<IkisugiFluidTank> tank = ((TankBlockItem) item).getFluidTank(itemStack);
+            Optional<IkisugiFluidTank> tank = ((TankBlockItem) item).getPriorityFluidTank(itemStack);
             Minecraft mc = Minecraft.getInstance();
-            tank.ifPresent(n -> {
-                TankRenderer.renderTank(mc.level, mc.player.blockPosition(), poseStack, multiBufferSource, n, combinedLight, combinedOverlay);
-            });
+            tank.ifPresent(n -> TankRenderer.renderTank(mc.level, mc.player.blockPosition(), poseStack, multiBufferSource, n, combinedLight, combinedOverlay));
         }
     }
 }

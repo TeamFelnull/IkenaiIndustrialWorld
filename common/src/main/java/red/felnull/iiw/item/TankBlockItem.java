@@ -34,7 +34,7 @@ public class TankBlockItem extends IkisugiBlockItem implements IIkisugibleFluidT
     @Environment(EnvType.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        Optional<IkisugiFluidTank> tank = getFluidTank(itemStack);
+        Optional<IkisugiFluidTank> tank = getPriorityFluidTank(itemStack);
         tank.ifPresent(n -> {
             list.add(new TextComponent("Fluid :").append(n.getFluidStack().getName()).append(" - " + n.getAmount() + "/" + n.getCapacity()).withStyle(ChatFormatting.GRAY));
         });
@@ -46,9 +46,12 @@ public class TankBlockItem extends IkisugiBlockItem implements IIkisugibleFluidT
     }
 
     @Override
-    public int getCapacity(ItemStack itemStack) {
-        return TankBlock.getTankCapacity(tierLevel);
+    public int getFluidTankSize(ItemStack itemStack) {
+        return 1;
     }
 
-
+    @Override
+    public int getDefaultCapacity(int i, ItemStack itemStack) {
+        return TankBlock.getTankCapacity(tierLevel);
+    }
 }

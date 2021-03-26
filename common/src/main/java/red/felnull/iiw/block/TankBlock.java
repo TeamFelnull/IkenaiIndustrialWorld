@@ -16,7 +16,6 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import red.felnull.iiw.block.shape.TankShape;
 import red.felnull.iiw.blockentity.IIWBlockEntitys;
 import red.felnull.iiw.blockentity.TankBlockEntity;
-import red.felnull.otyacraftengine.blockentity.ITickbleBlockEntity;
 import red.felnull.otyacraftengine.util.IKSGFluidUtil;
 
 public class TankBlock extends IIWBaseEntityBlock {
@@ -38,8 +37,9 @@ public class TankBlock extends IIWBaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState blockState, Level level, BlockPos blockPos, Player player, InteractionHand interactionHand, BlockHitResult blockHitResult) {
-
         IKSGFluidUtil.interactWithFluidTank(player, interactionHand, level, blockPos, blockHitResult.getDirection());
+
+
         return InteractionResult.sidedSuccess(level.isClientSide());
     }
 
@@ -53,7 +53,7 @@ public class TankBlock extends IIWBaseEntityBlock {
     }
 
     @Override
-    public BlockEntityType<? extends ITickbleBlockEntity> getTickerBlockEntityType() {
+    public BlockEntityType<?> getBlockEntityType() {
         return IIWBlockEntitys.TANK;
     }
 }

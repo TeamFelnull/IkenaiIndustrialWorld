@@ -19,7 +19,7 @@ public class TankRenderer extends IkisugiBlockEntityRenderer<TankBlockEntity> {
 
     @Override
     public void render(TankBlockEntity blockEntity, float f, PoseStack poseStack, MultiBufferSource multiBufferSource, int i, int j) {
-        renderTank(blockEntity.getLevel(), blockEntity.getBlockPos(), poseStack, multiBufferSource, blockEntity.getTank(), i, j);
+        renderTank(blockEntity.getLevel(), blockEntity.getBlockPos(), poseStack, multiBufferSource, blockEntity.getFluidTank(0), i, j);
     }
 
     public static void renderTank(BlockAndTintGetter getter, BlockPos pos, PoseStack poseStack, MultiBufferSource multiBufferSource, IkisugiFluidTank tank, int combinedLight, int combinedOverlay) {
