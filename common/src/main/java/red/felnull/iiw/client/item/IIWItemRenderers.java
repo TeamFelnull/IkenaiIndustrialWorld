@@ -9,5 +9,7 @@ public class IIWItemRenderers {
         IKSGClientUtil.registerItemRenderer(IIWBlocks.POOR_TANK, tir);
         IKSGClientUtil.registerItemRenderer(IIWBlocks.SIMPLE_TANK, tir);
         IKSGClientUtil.registerItemRenderer(IIWBlocks.BASIC_TANK, tir);
+
+        IKSGClientUtil.registerItemRenderer(IIWBlocks.PIPE, new FluidPipeItemRenderer());
     }
 }

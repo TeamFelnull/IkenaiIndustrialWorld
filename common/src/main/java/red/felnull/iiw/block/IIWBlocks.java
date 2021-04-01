@@ -24,6 +24,8 @@ public class IIWBlocks {
     public static final Block SIMPLE_TANK = registerTank("simple_tank", 1, Material.STONE);
     public static final Block BASIC_TANK = registerTank("basic_tank", 2, Material.METAL);
 
+    public static final Block PIPE = register("pipe", new FluidPipeBlock(BlockBehaviour.Properties.of(Material.METAL).strength(1, 1)));
+
     public static Block registerTank(String name, int tier, Material material) {
         return register(name, new TankBlock(tier, BlockBehaviour.Properties.of(material).strength(1f, 1f).noOcclusion()), n -> new TankBlockItem(n, tier, new Item.Properties().tab(IIWCreativeModeTab.MOD_TAB)));
     }

@@ -12,7 +12,7 @@ import red.felnull.otyacraftengine.util.IKSGBlockEntityUtil;
 public class IIWBlockEntitys {
     public static final DeferredRegister<BlockEntityType<?>> ENTITY_TYPES = DeferredRegister.create(IkenaiIndustrialWorld.MODID, Registry.BLOCK_ENTITY_TYPE_REGISTRY);
     public static final BlockEntityType<TankBlockEntity> TANK = register("tank", TankBlockEntity::new, IIWBlocks.POOR_TANK, IIWBlocks.SIMPLE_TANK, IIWBlocks.BASIC_TANK);
-
+    public static final BlockEntityType<FluidPipeEntity> FLUID_PIPE = register("fluid_pipe", FluidPipeEntity::new, IIWBlocks.PIPE);
 
     private static <T extends BlockEntity> BlockEntityType<T> register(String name, IKSGBlockEntityUtil.IKSGBlockEntitySupplier<? extends BlockEntity> blockEntitySupplier, Block... blocks) {
         BlockEntityType<T> be = IKSGBlockEntityUtil.craeteBlockEntityType(blockEntitySupplier, blocks);

@@ -18,7 +18,7 @@ import red.felnull.iiw.blockentity.IIWBlockEntitys;
 import red.felnull.iiw.blockentity.TankBlockEntity;
 import red.felnull.otyacraftengine.util.IKSGFluidUtil;
 
-public class TankBlock extends IIWBaseEntityBlock {
+public class TankBlock extends IIWEquipmentBaseBlock {
     private final int tierLevel;
 
     public TankBlock(int tierLevel, BlockBehaviour.Properties properties) {
