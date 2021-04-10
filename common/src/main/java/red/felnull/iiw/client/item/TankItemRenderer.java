@@ -14,7 +14,7 @@ import red.felnull.iiw.client.blockentity.TankRenderer;
 import red.felnull.iiw.item.TankBlockItem;
 import red.felnull.otyacraftengine.client.renderer.item.ICustomBEWLRenderer;
 import red.felnull.otyacraftengine.client.util.IKSGRenderUtil;
-import red.felnull.otyacraftengine.fluid.IkisugiFluidTank;
+import red.felnull.otyacraftengine.fluid.storage.FluidTank;
 
 import java.util.Optional;
 
@@ -26,7 +26,7 @@ public class TankItemRenderer implements ICustomBEWLRenderer {
             BakedModel model = IKSGRenderUtil.getBakedModel(new ResourceLocation(((TankBlockItem) item).getRegistryName().getNamespace(), "block/tank/" + ((TankBlockItem) item).getRegistryName().getPath()));
             VertexConsumer ivb = multiBufferSource.getBuffer(Sheets.cutoutBlockSheet());
             IKSGRenderUtil.renderBakedModel(poseStack, ivb, null, model, combinedLight, combinedOverlay);
-            Optional<IkisugiFluidTank> tank = ((TankBlockItem) item).getPriorityFluidTank(itemStack);
+            Optional<FluidTank> tank = ((TankBlockItem) item).getFluidTank(itemStack);
             Minecraft mc = Minecraft.getInstance();
             tank.ifPresent(n -> TankRenderer.renderTank(mc.level, mc.player.blockPosition(), poseStack, multiBufferSource, n, combinedLight, combinedOverlay));
         }

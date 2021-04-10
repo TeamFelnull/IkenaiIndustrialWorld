@@ -12,14 +12,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.Nullable;
 import red.felnull.iiw.block.TankBlock;
-import red.felnull.otyacraftengine.fluid.IkisugiFluidTank;
-import red.felnull.otyacraftengine.item.IIkisugibleFluidTankItem;
+import red.felnull.otyacraftengine.fluid.storage.FluidTank;
 import red.felnull.otyacraftengine.item.IkisugiBlockItem;
+import red.felnull.otyacraftengine.item.storage.IContainerFluidTankItem;
 
 import java.util.List;
 import java.util.Optional;
 
-public class TankBlockItem extends IkisugiBlockItem implements IIkisugibleFluidTankItem {
+public class TankBlockItem extends IkisugiBlockItem implements IContainerFluidTankItem {
     private final int tierLevel;
 
     public TankBlockItem(Block block, int tierLevel, Item.Properties properties) {
@@ -34,24 +34,24 @@ public class TankBlockItem extends IkisugiBlockItem implements IIkisugibleFluidT
     @Environment(EnvType.CLIENT)
     @Override
     public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> list, TooltipFlag tooltipFlag) {
-        Optional<IkisugiFluidTank> tank = getPriorityFluidTank(itemStack);
+        Optional<FluidTank> tank = getFluidTank(itemStack);
         tank.ifPresent(n -> {
             list.add(new TextComponent("Fluid :").append(n.getFluidStack().getName()).append(" - " + n.getAmount() + "/" + n.getCapacity()).withStyle(ChatFormatting.GRAY));
         });
     }
 
     @Override
-    public ItemStack getEmptyFluidItem() {
+    public int getPriorityFluidTankNumber() {
+        return 0;
+    }
+
+    @Override
+    public ItemStack getEmptyFluidTankItem() {
         return new ItemStack(this);
     }
 
     @Override
-    public int getFluidTankSize(ItemStack itemStack) {
-        return 1;
-    }
-
-    @Override
-    public int getDefaultCapacity(int i, ItemStack itemStack) {
-        return TankBlock.getTankCapacity(tierLevel);
+    public int getCapacity(ItemStack itemStack) {
+        return TankBlock.getTankCapacity(getTierLevel());
     }
 }

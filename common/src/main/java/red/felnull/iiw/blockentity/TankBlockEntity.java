@@ -1,33 +1,34 @@
 package red.felnull.iiw.blockentity;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.block.state.BlockState;
 import red.felnull.iiw.block.TankBlock;
-import red.felnull.otyacraftengine.fluid.IkisugiFluidTank;
+import red.felnull.otyacraftengine.blockentity.container.IkisugiFluidContainerBlockEntity;
+import red.felnull.otyacraftengine.fluid.storage.FluidTank;
 
-import java.util.Optional;
-
-public class TankBlockEntity extends IIWBaseContainerBlockEntity {
-    private final TankBlock tankBlock;
+public class TankBlockEntity extends IkisugiFluidContainerBlockEntity {
+    private final int tierLevel;
 
     public TankBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(IIWBlockEntitys.TANK, blockPos, blockState);
-        this.tankBlock = (TankBlock) blockState.getBlock();
-        setFluidTankCapacity(0, TankBlock.getTankCapacity(getTierLevel()));
+        if (blockState.getBlock() instanceof TankBlock) {
+            this.tierLevel = ((TankBlock) blockState.getBlock()).getTierLevel();
+        } else {
+            this.tierLevel = 0;
+        }
     }
 
     public int getTierLevel() {
-        return tankBlock.getTierLevel();
+        return tierLevel;
     }
 
     @Override
     protected Component getDefaultName() {
-        return new TranslatableComponent(tankBlock.getDescriptionId());
+        return null;
     }
 
     @Override
@@ -35,13 +36,14 @@ public class TankBlockEntity extends IIWBaseContainerBlockEntity {
         return null;
     }
 
+
     @Override
-    public int getFluidTankSize() {
+    public int getFluidTankCount() {
         return 1;
     }
 
     @Override
-    public Optional<IkisugiFluidTank> getFluidTank(Direction side) {
-        return Optional.of(getFluidTank(0));
+    public void createTanks(NonNullList<FluidTank> nonNullList) {
+        nonNullList.set(0, FluidTank.createEmpty(TankBlock.getTankCapacity(getTierLevel())));
     }
 }

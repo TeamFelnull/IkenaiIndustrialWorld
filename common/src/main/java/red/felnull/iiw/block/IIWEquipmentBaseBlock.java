@@ -38,4 +38,9 @@ public abstract class IIWEquipmentBaseBlock extends IIWBaseEntityBlock {
         super.createBlockStateDefinition(builder);
         builder.add(FACING);
     }
+
+    public boolean isKeepContainerInventory() {
+        return true;
+    }
+
 }

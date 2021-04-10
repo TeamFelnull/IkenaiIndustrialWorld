@@ -9,7 +9,7 @@ import net.minecraft.world.level.BlockAndTintGetter;
 import red.felnull.iiw.blockentity.TankBlockEntity;
 import red.felnull.otyacraftengine.client.renderer.blockentity.IkisugiBlockEntityRenderer;
 import red.felnull.otyacraftengine.client.util.IKSGRenderUtil;
-import red.felnull.otyacraftengine.fluid.IkisugiFluidTank;
+import red.felnull.otyacraftengine.fluid.storage.FluidTank;
 
 public class TankRenderer extends IkisugiBlockEntityRenderer<TankBlockEntity> {
 
@@ -22,7 +22,7 @@ public class TankRenderer extends IkisugiBlockEntityRenderer<TankBlockEntity> {
         renderTank(blockEntity.getLevel(), blockEntity.getBlockPos(), poseStack, multiBufferSource, blockEntity.getFluidTank(0), i, j);
     }
 
-    public static void renderTank(BlockAndTintGetter getter, BlockPos pos, PoseStack poseStack, MultiBufferSource multiBufferSource, IkisugiFluidTank tank, int combinedLight, int combinedOverlay) {
+    public static void renderTank(BlockAndTintGetter getter, BlockPos pos, PoseStack poseStack, MultiBufferSource multiBufferSource, FluidTank tank, int combinedLight, int combinedOverlay) {
         if (tank.isEmpty())
             return;
         FluidStack fluidStack = tank.getFluidStack();

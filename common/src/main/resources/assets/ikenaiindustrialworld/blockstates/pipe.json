@@ -1,5 +1,7 @@
 {
-    "textures": {
-        "particle": "minecraft:block/cobblestone"
+  "variants": {
+    "": {
+      "model": "ikenaiindustrialworld:block/pipe/pipe"
     }
+  }
 }
