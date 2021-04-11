@@ -11,19 +11,16 @@ import red.felnull.otyacraftengine.blockentity.container.IkisugiFluidContainerBl
 import red.felnull.otyacraftengine.fluid.storage.FluidTank;
 
 public class TankBlockEntity extends IkisugiFluidContainerBlockEntity {
-    private final int tierLevel;
 
     public TankBlockEntity(BlockPos blockPos, BlockState blockState) {
         super(IIWBlockEntitys.TANK, blockPos, blockState);
-        if (blockState.getBlock() instanceof TankBlock) {
-            this.tierLevel = ((TankBlock) blockState.getBlock()).getTierLevel();
-        } else {
-            this.tierLevel = 0;
-        }
     }
 
     public int getTierLevel() {
-        return tierLevel;
+        if (getBlockState().getBlock() instanceof TankBlock) {
+            return ((TankBlock) getBlockState().getBlock()).getTierLevel();
+        }
+        return 0;
     }
 
     @Override

@@ -46,6 +46,11 @@ public class TankBlockItem extends IkisugiBlockItem implements IContainerFluidTa
     }
 
     @Override
+    public int getFluidTankCont() {
+        return 1;
+    }
+
+    @Override
     public ItemStack getEmptyFluidTankItem() {
         return new ItemStack(this);
     }

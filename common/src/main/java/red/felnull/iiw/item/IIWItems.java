@@ -21,5 +21,6 @@ public class IIWItems {
 
     public static void init() {
         ITEMS.register();
+        IIWFoods.init();
     }
 }
